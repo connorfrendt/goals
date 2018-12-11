@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <p>I am a paragraph tag</p>
   </div>
 </template>
 
