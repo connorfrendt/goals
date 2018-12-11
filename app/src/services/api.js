@@ -7,7 +7,7 @@ const getOptions = (method, data) => {
   };
 
   if(data) {
-    options.headers['Content-Type'] = 'applications/json';
+    options.headers['Content-Type'] = 'application/json';
     options.body = JSON.stringify(data);
   }
 
@@ -52,12 +52,12 @@ export default {
   },
 
   getGoals() {
-    return fetch('/api/pets', getOptions('GET'))
+    return fetch('/api/goals', getOptions('GET'))
       .then(response => response.json());
   },
 
   addGoal(goal) {
-    return fetch('/api/pets', getOptions('POST', goal))
+    return fetch('/api/goals', getOptions('POST', goal))
       .then(response => response.json());
   }
 };

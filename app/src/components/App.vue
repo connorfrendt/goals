@@ -2,12 +2,12 @@
   <div id="app">
     <header>
       <span v-if="user">
-        Hello {{user.username}}
+        Welcome {{user.username}}
       </span>
-      <nav v-if="user">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/goals">Goals</RouterLink>
-        <a href="#" @click="handleLogout">Logout</a>
+      <nav id="navbar" v-if="user">
+        <RouterLink class="nav" to="/">Home</RouterLink>
+        <RouterLink class="nav" to="/goals">Goals</RouterLink>
+        <a href="#" class="nav" @click="handleLogout">Logout</a>
       </nav>
     </header>
 
@@ -41,7 +41,7 @@ export default {
   },
   methods:{
     handleSignUp(profile) {
-      return api.signUP(profile)
+      return api.signUp(profile)
         .then(user => {
           this.setUser(user);
         });
@@ -79,5 +79,17 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+#navbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav {
+  padding: 5px;
+  margin: 0 5px;
+  border: 1px solid black;
+
 }
 </style>

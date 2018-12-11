@@ -1,12 +1,8 @@
 <template>
   <section>
     <div v-if="method === 'signin'">
-      <h2>Sign In</h2>
 
-      <p>
-        Need to register?
-        <button @click="method = 'signup'">Sign Up</button>
-      </p>
+      <h2>Sign In</h2>  
 
       <form @submit.prevent="handleSignInSubmit(profile)">
         <label>
@@ -22,6 +18,11 @@
         <label>
           <button>Sign In</button>
         </label>
+
+        <p>
+          Need to register?
+          <button @click="method = 'signup'">Sign Up</button>
+        </p>
       </form>
     </div>
 
@@ -33,7 +34,7 @@
         <button @click="method = 'signin'">Sign In</button>
       </p>
 
-      <form @submti.prevent="handleSignUpSubmit(profile)">
+      <form @submit.prevent="handleSignUpSubmit(profile)">
         <label>
           Username:
           <input v-model="profile.username" required>
@@ -90,6 +91,13 @@ export default {
 };
 </script>
 
-<style>
+<style lang="postcss" scoped>
+label {
+  display: block;
+  padding: 10px 0;
+}
 
+pre {
+  color: red;
+}
 </style>
