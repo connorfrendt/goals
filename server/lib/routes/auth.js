@@ -58,7 +58,7 @@ router
     )
       .then(result => {
         if(result.rows.length === 0 || result.rows[0].password !== password) {
-          res.status(400).json({ error: 'username or apssword incorrect' });
+          res.status(400).json({ error: 'username or password incorrect' });
           return;
         }
 
