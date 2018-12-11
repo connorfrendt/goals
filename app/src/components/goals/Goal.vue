@@ -5,7 +5,7 @@
 <script>
 export default {
   props: {
-    pet: null
+    goal: null
   }
 };
 </script>
