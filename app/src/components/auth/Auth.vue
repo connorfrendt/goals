@@ -1,53 +1,56 @@
 <template>
   <section>
     <div v-if="method === 'signin'">
-
-      <h2>Sign In</h2>  
+      
 
       <form @submit.prevent="handleSignInSubmit(profile)">
-        <label>
-          Username:
-          <input v-model="profile.username" required>
-        </label>
+        <div class="sign-in">
+          <h2>Sign In</h2>  
+            <label>
+              Username:
+              <input v-model="profile.username" required>
+            </label>
 
-        <label>
-          Password:
-          <input type="password" v-model="profile.password" required>
-        </label>
+            <label>
+              Password:
+              <input type="password" v-model="profile.password" required>
+            </label>
 
-        <label>
-          <button>Sign In</button>
-        </label>
-
-        <p>
-          Need to register?
-          <button @click="method = 'signup'">Sign Up</button>
-        </p>
+            <label>
+              <button>Sign In</button>
+            </label>
+        </div>
+          <p>
+            Need to register?
+            <button @click="method = 'signup'">Sign Up</button>
+          </p>
+        
       </form>
     </div>
 
     <div v-else>
-      <h2>Sign Up</h2>
-
-      <p>
-        Already have an account?
-        <button @click="method = 'signin'">Sign In</button>
-      </p>
 
       <form @submit.prevent="handleSignUpSubmit(profile)">
-        <label>
-          Username:
-          <input v-model="profile.username" required>
-        </label>
-        
-        <label>
-          Password:
-          <input type="password" v-model="profile.password" required>
-        </label>
+        <div class="sign-in">
+        <h2>Sign Up</h2>
+          <label>
+            Username:
+            <input v-model="profile.username" required>
+          </label>
+          
+          <label>
+            Password:
+            <input type="password" v-model="profile.password" required>
+          </label>
 
-        <label>
-          <button>Sign Up</button>
-        </label>
+          <label>
+            <button>Sign Up</button>
+          </label>
+        </div>
+        <p>
+        Already have an account?
+        <button @click="method = 'signin'">Sign In</button>
+        </p>
       </form>
     </div>
     <pre v-if="error">{{error}}</pre>
@@ -95,6 +98,14 @@ export default {
 label {
   display: block;
   padding: 10px 0;
+}
+
+.sign-in {
+  display: inline-block;
+  border: 1px solid black;
+  padding: 10px;
+  background: rgb(230, 228, 228);
+  box-shadow: 4px 4px 10px black;
 }
 
 pre {
