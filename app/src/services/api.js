@@ -57,7 +57,7 @@ export default {
   },
 
   addGoal(goal) {
-    return fetch('/api/pets', getOptions('POST', pet))
+    return fetch('/api/pets', getOptions('POST', goal))
       .then(response => response.json());
   }
 };
