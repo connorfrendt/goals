@@ -1,14 +1,25 @@
 <template>
   <div id="app">
-    <p>I am a paragraph tag</p>
+    <header>
+      <span v-if="user">
+        Hello {{user.username}}
+      </span>
+      <nav v-if="user">
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/goals">Goals</RouterLink>
+        <a href="#" @click="handleLogout">Logout</a>
+      </nav>
+    </header>
   </div>
 </template>
 
 <script>
+import api from '../services/api';
+
 
 export default {
 
-}
+};
 </script>
 
 <style>
