@@ -56,7 +56,7 @@ export default {
       this.user = user;
       if(user) {
         api.setToken(user.id);
-        window.localStorage.settem('profile', JSON.stringify(user));
+        window.localStorage.setItem('profile', JSON.stringify(user));
       }
       else {
         api.setToken();
