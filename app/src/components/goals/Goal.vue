@@ -6,7 +6,7 @@
       <br />
       Start Date: {{ new Date(goal.startDate).toLocaleString() }}
       <br />
-      End Date: {{ new Date(goal.endDate).toLocaleString() }}
+      <!-- End Date: {{ new Date(goal.endDate).toLocaleString() }} -->
     </li>
 </template>
 

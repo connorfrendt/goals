@@ -7,6 +7,7 @@
       <input v-focus v-model="goal.type" required>
 
     <label>Start Date:</label>
+      <input v-focus v-model="goal.startDate" required>
       <button>Add</button>
   </form>
 </template>
@@ -17,7 +18,7 @@ function initGoal() {
     name: '',
     type: '',
     startDate: new Date(),
-    endDate: null
+    // endDate: null
   };
 }
 
