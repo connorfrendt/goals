@@ -1,9 +1,26 @@
 const client = require('../lib/db-client');
 
 const goals = [
-  { goal_name: 'Python Course', type: 'Academic' },
-  { goal_name: 'Dance', type: 'Recreational' },
-  { goal_name: 'Have fun!', type: 'Recreational' }
+  { 
+    goal_name: 'Python Course',
+    type: 'Academic',
+    start_date: "12/11/2018",
+    end_date: "1/1/2019"
+  },
+
+  {
+    goal_name: 'Dance',
+    type: 'Recreational',
+    start_date: "12/11/2018",
+    end_date: "1/2/2019"
+  },
+
+  {
+    goal_name: 'Have fun!',
+    type: 'Recreational',
+    start_date: "12/11/2018",
+    end_date: "1/3/2019"
+  }
 ];
 
 client.query(`
@@ -19,10 +36,10 @@ client.query(`
     return Promise.all(
       goals.map(goals => {
         return client.query(`
-          INSERT INTO goals (goal_name, type, profile_id)
-          VALUES ($1, $2, $3)
+          INSERT INTO goals (goal_name, type, profile_id, start_date, end_date)
+          VALUES ($1, $2, $3, $4, $5)
         `,
-        [goals.goal_name, goals.type, profile.id]);
+        [goals.goal_name, goals.type, profile.id, goals.startDate, goals.endDate]);
       })
     );
   })

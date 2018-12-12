@@ -6,7 +6,7 @@ const router = Router(); //eslint-disable-line new-cap
 router
   .get('/', (req, res) => {
     client.query(`
-      SELECT id, goal_name, type
+      SELECT id, goal_name, type, start_date as "startDate", end_date as "endDate"
       FROM goals
       WHERE profile_id = $1;
     `,
@@ -18,13 +18,13 @@ router
 
   .post('/', (req, res) => {
     const body = req.body;
-
+    console.log('asdfasdf', body.startDate, body.endDate);
     client.query(`
-      INSERT INTO goals (goal_name, type, profile_id)
-      VALUES($1, $2, $3)
-      RETURNING *;
+      INSERT INTO goals (goal_name, type, profile_id, start_date, end_date)
+      VALUES($1, $2, $3, $4, $5)
+      RETURNING id, goal_name, type, start_date as "startDate", end_date as "endDate";
     `,
-    [body.goal_name, body.type, req.userId])
+    [body.goal_name, body.type, req.userId, body.startDate, body.endDate])
       .then(result => {
         res.json(result.rows[0]);
       });
