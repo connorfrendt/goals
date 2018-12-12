@@ -1,4 +1,5 @@
 const client = require('../lib/db-client');
+const bcrypt = require('bcryptjs');
 
 const goals = [
   { 
@@ -28,7 +29,7 @@ client.query(`
   VALUES ($1, $2)
   RETURNING id;
 `,
-['frendtc', 'qwerty']
+['frendtc', bcrypt.hashSync('qwerty', 8)]
 )
   .then(result => {
     const profile = result.rows[0];

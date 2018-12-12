@@ -6,6 +6,7 @@ router
     const body = req.body;
     const username = body.username;
     const password = body.password;
+    const bcrypt = require('bcryptjs');
 
     if(!username || !password) {
       res.status(400).json({ error: 'Username and Password required' });
@@ -27,11 +28,11 @@ router
         console.log('creating new user profile...');
 
         client.query(`
-          INSERT INTO profile (username, password)
+          INSERT INTO profile (username, hash)
           VALUES ($1, $2)
           RETURNING id, username;
         `,
-        [username, password]
+        [username, bcrypt.hashSync(password, 8)]
         )
           .then(result => {
             res.json(result.rows[0]);
