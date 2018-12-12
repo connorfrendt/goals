@@ -4,22 +4,22 @@ const goals = [
   { 
     goal_name: 'Python Course',
     type: 'Academic',
-    start_date: "12/11/2018",
-    end_date: "1/1/2019"
+    startDate: "12/11/2018",
+    endDate: "1/1/2019"
   },
 
   {
     goal_name: 'Dance',
     type: 'Recreational',
-    start_date: "12/11/2018",
-    end_date: "1/2/2019"
+    startDate: "12/11/2018",
+    endDate: "1/2/2019"
   },
 
   {
     goal_name: 'Have fun!',
     type: 'Recreational',
-    start_date: "12/11/2018",
-    end_date: "1/3/2019"
+    startDate: "12/11/2018",
+    endDate: "1/3/2019"
   }
 ];
 
