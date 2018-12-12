@@ -4,9 +4,9 @@
       <br />
       <b>Type:</b> {{goal.type}}
       <br />
-      Start Date: {{ new Date(goal.startDate).toLocaleDateString() }}
+      Start Date: {{ new Date(goal.startDate).toLocaleString() }}
       <br />
-      End Date: {{ new Date(goal.endDate).toLocaleDateString() }}
+      End Date: {{ new Date(goal.endDate).toLocaleString() }}
     </li>
 </template>
 

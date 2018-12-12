@@ -5,6 +5,8 @@
     
     <label>Type:</label>
       <input v-focus v-model="goal.type" required>
+
+    <label>Start Date:</label>
       <button>Add</button>
   </form>
 </template>
