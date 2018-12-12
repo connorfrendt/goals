@@ -17,7 +17,7 @@ function initGoal() {
   return {
     name: '',
     type: '',
-    startDate: new Date(),
+    startDate: '',
     // endDate: null
   };
 }
