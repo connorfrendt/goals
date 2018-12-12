@@ -40,6 +40,13 @@ export default {
         .then(saved => {
           this.goals.push(saved);
         });
+    },
+    handleEdit(goal) {
+      return api.updateGoal(goal)
+        .then(updated => {
+          const index = this.goal.findIndex((goal) => goal.id === updated.id);
+          this.goal.splice(index, 1, updated);
+        }); 
     }
   }
 };
