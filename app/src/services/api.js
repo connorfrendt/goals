@@ -57,6 +57,7 @@ export default {
   },
 
   addGoal(goal) {
+    console.log('asdfasdf', goal);
     return fetch('/api/goals', getOptions('POST', goal))
       .then(response => response.json());
   }

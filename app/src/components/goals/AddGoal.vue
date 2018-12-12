@@ -13,7 +13,9 @@
 function initGoal() {
   return {
     name: '',
-    type: ''
+    type: '',
+    startDate: new Date(),
+    endDate: null
   };
 }
 
@@ -28,6 +30,7 @@ export default {
   },
   methods: {
     handleSubmit() {
+      
       this.onAdd(this.goal)
         .then(() => {
           this.goal = initGoal();
